@@ -1,6 +1,6 @@
 # Example User Service 
 
-Simple CRUD app that Integrates Spring Boot, MongoDB and gRPC
+Simple CRUD app that Integrates [Spring Boot](https://spring.io/, "https://spring.io/"), [MongoDB](https://www.mongodb.com/, "https://www.mongodb.com/") and [gRPC](https://grpc.io/,"https://grpc.io/")
 
 The services exposes a simple 'User' collection, stored in MongoDB
 
@@ -44,7 +44,7 @@ Run MongoDB easily in Docker
 ```$ docker run --name some-mongo -d -p 27017:27017 mongo:latest```
 
 Use MongoDB Compass GUI to easily view collections and data
- 
+ [https://www.mongodb.com/products/compass](https://www.mongodb.com/products/compass "https://www.mongodb.com/products/compass")
 #### GenerateRPC Code
  
 Generate to gRPC code form the user.proto file
