@@ -43,11 +43,11 @@ Run MongoDB easily in Docker
 
 ```$ docker run --name some-mongo -d -p 27017:27017 mongo:latest```
 
-Use MongoDB Compass GUI to easily view collections and data
- [https://www.mongodb.com/products/compass](https://www.mongodb.com/products/compass "https://www.mongodb.com/products/compass")
-#### GenerateRPC Code
+Use [MongDB Compass](https://www.mongodb.com/products/compass "https://www.mongodb.com/products/compass") GUI to easily view collections and data
  
-Generate to gRPC code form the user.proto file
+#### Generate gRPC Code
+ 
+Generate to gRPC code form the user.proto file by using the [Gradle Protobuf Plugin](https://github.com/google/protobuf-gradle-plugin, "https://github.com/google/protobuf-gradle-plugin")
 
 ```$ ./gradlew clean generateProto```
 
