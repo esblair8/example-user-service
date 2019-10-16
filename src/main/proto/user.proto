@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package user;
+
+option java_multiple_files = true;
+option java_package = "com.proto.user";
+
+service UserService {
+    rpc readUser (UserId) returns (UserResponse) {
+    }
+    rpc readAllUsers (Empty) returns (stream UserResponse) {
+    }
+    rpc readByName (UserName) returns (stream UserResponse) {
+    }
+    rpc readAllUserSettings (UserId) returns (UserSettings) {
+    }
+    rpc readUserSetting (SingleSettingRequest) returns (SingleSettingResponse) {
+    }
+    rpc addNewUser (NewUserRequest) returns (UserResponse) {
+    }
+    rpc deleteUser (UserId) returns (Empty) {
+    }
+    rpc deleteUserSettings (UserId) returns (UserResponse) {
+    }
+    rpc deleteUserSetting (SingleSettingRequest) returns (UserResponse) {
+    }
+    rpc updateUserName (UpdateNameRequest) returns (UserResponse) {
+    }
+    rpc addOrUpdateUserSettings (AddOrUpdateUserSetting) returns (UserResponse) {
+    }
+}
+
+message Empty {
+}
+
+message UserId {
+    string id = 1;
+}
+
+message UserName {
+    string name = 1;
+}
+
+message UserSettings {
+    map<string, string> userSettings = 1;
+}
+
+message GRpcUser {
+    UserId userId = 1;
+    UserName username = 2;
+    string creationDate = 3;
+    UserSettings userSettings = 4;
+}
+
+message SingleSettingRequest {
+    UserId userId = 1;
+    string key = 2;
+}
+
+message SingleSettingResponse {
+    string value = 1;
+}
+
+message UserResponse {
+    GRpcUser user = 1;
+}
+
+message NewUserRequest {
+    UserName userName = 1;
+    UserSettings settings = 2;
+}
+
+message UpdateNameRequest {
+    UserName userName = 1;
+    UserId userId = 2;
+}
+
+message AddOrUpdateUserSetting {
+    UserId userId = 1;
+    string key = 2;
+    string value = 3;
+
+}
